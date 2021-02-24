@@ -1,0 +1,3 @@
+In order to make new colection at the begining, run from console:
+
+1) node seedCategory.js
