@@ -25,12 +25,17 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 // //Get the default connection
 // const db = mongoose.connection;
+
+
+/******** */
 var MongoClient = require('mongodb').MongoClient;
 
 var uri = process.env.MONGODB_URI;
 MongoClient.connect(uri, function(err, db) {
   db.close();
 });
+
+/********* */
 
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error...'));
