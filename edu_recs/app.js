@@ -31,9 +31,10 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var MongoClient = require('mongodb').MongoClient;
 
 var uri = process.env.MONGODB_URI;
-MongoClient.connect(uri, function(err, db) {
-  db.close();
+MongoClient.connect(uri, function(err, dbs) {
+  dbs.close();
 });
+const db = MongoClient.connection;
 
 /********* */
 
