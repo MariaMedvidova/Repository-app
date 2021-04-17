@@ -28,14 +28,10 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
 /******** */
-var MongoClient = require('mongodb').MongoClient;
 
 var uri = process.env.MONGODB_URI;
-MongoClient.connect(uri, function(err, dbs) {
-  dbs.close();
-});
-const db = MongoClient.connection;
-
+mongoose.connect.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
+const db = mongoose.connection;
 /********* */
 
 //Bind connection to error event (to get notification of connection errors)
