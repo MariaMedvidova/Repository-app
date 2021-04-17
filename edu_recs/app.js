@@ -28,7 +28,6 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 
 /******** */
-
 var uri = process.env.MONGODB_URI;
 mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
